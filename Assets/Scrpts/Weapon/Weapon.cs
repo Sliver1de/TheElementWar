@@ -28,9 +28,9 @@ public class Weapon : MonoBehaviour
     public void Fire()
     {
         Debug.Log("Fire");
-        Debug.DrawRay(playerCamera.transform.position, playerCamera.transform.forward * data.Range, Color.green, 3f);
+        Debug.DrawRay(playerCamera.transform.position, playerCamera.transform.forward * data.range, Color.green, 3f);
         if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward,
-                out RaycastHit hit, data.Range, hitMask))
+                out RaycastHit hit, data.range, hitMask))
         {
             Debug.Log(hit.collider.name);
             Instantiate(hitEffect, hit.point, Quaternion.LookRotation(hit.normal));
