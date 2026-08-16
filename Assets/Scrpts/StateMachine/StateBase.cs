@@ -7,14 +7,19 @@ using UnityEngine;
 /// </summary>
 public abstract class StateBase
 {
+    protected IStateMachineOwner owner;
+
+    public virtual void Init(IStateMachineOwner owner)
+    {
+        this.owner = owner;
+    }
+    
     public virtual void Enter() { }
     
     public virtual void Exit() { }
 
-    public virtual void Init(IStateMachineOwner owner) { }
-
-    public virtual void Destroy() { }
-
     public virtual void Update() { }
+    
+    public virtual void Destroy() { }
 
 }
