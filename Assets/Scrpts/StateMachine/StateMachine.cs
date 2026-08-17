@@ -3,10 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface IStateMachineOwner
-{
-}
-
 /// <summary>
 /// 角色状态机
 /// </summary>
