@@ -8,7 +8,9 @@ using UnityEngine;
 /// </summary>
 public class StateMachine
 {
-    private StateBase currentState;         //当前角色状态
+    #region abstract 实现
+
+    /*private StateBase currentState;         //当前角色状态
     private IStateMachineOwner owner;       //状态机宿主
     private Dictionary<Type, StateBase> stateDic = new Dictionary<Type, StateBase>();
     
@@ -37,5 +39,29 @@ public class StateMachine
     public void Update()
     {
         currentState?.Update();
+    }*/
+
+    #endregion
+    
+    public IState CurrentState { get; private set; }
+
+    public void Initialize(IState startingState)
+    {
+        CurrentState = startingState;
+        CurrentState.Enter();
+    }
+
+    public void ChangeState(IState newState)
+    {
+        if (newState == null || newState == CurrentState) return;
+        
+        CurrentState?.Exit();
+        CurrentState = newState;
+        CurrentState.Enter();
+    }
+
+    public void Update()
+    {
+        CurrentState?.Execute();
     }
 }
