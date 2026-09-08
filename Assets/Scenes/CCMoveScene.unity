@@ -6647,10 +6647,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 669213280175607669, guid: 5a1f45a3820813548a0c90c1971e2f0b, type: 3}
+      propertyPath: m_UpdateWhenOffscreen
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1591246474199807726, guid: 5a1f45a3820813548a0c90c1971e2f0b, type: 3}
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: f155d55f91728c74bbd7a90b0687791b, type: 2}
+    - target: {fileID: 2471374826911303550, guid: 5a1f45a3820813548a0c90c1971e2f0b, type: 3}
+      propertyPath: m_UpdateWhenOffscreen
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2522520103235485279, guid: 5a1f45a3820813548a0c90c1971e2f0b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -6691,12 +6699,36 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5821599507933364873, guid: 5a1f45a3820813548a0c90c1971e2f0b, type: 3}
+      propertyPath: m_UpdateWhenOffscreen
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5857130166404659974, guid: 5a1f45a3820813548a0c90c1971e2f0b, type: 3}
+      propertyPath: m_UpdateWhenOffscreen
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8454635604541309072, guid: 5a1f45a3820813548a0c90c1971e2f0b, type: 3}
       propertyPath: m_Name
       value: Lumine FBX
       objectReference: {fileID: 0}
+    - target: {fileID: 8509763441709437833, guid: 5a1f45a3820813548a0c90c1971e2f0b, type: 3}
+      propertyPath: m_UpdateWhenOffscreen
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 1385265242535553742, guid: 5a1f45a3820813548a0c90c1971e2f0b, type: 3}
+    - {fileID: 7204353158012876761, guid: 5a1f45a3820813548a0c90c1971e2f0b, type: 3}
+    - {fileID: 5056831873151594075, guid: 5a1f45a3820813548a0c90c1971e2f0b, type: 3}
+    - {fileID: 3338858797837761362, guid: 5a1f45a3820813548a0c90c1971e2f0b, type: 3}
+    - {fileID: 1644688789261817621, guid: 5a1f45a3820813548a0c90c1971e2f0b, type: 3}
+    - {fileID: 3086192556248790716, guid: 5a1f45a3820813548a0c90c1971e2f0b, type: 3}
+    - {fileID: 1393780068451631277, guid: 5a1f45a3820813548a0c90c1971e2f0b, type: 3}
+    - {fileID: 5411213973530003327, guid: 5a1f45a3820813548a0c90c1971e2f0b, type: 3}
+    - {fileID: 1723922217508514343, guid: 5a1f45a3820813548a0c90c1971e2f0b, type: 3}
+    - {fileID: 8053365255175631400, guid: 5a1f45a3820813548a0c90c1971e2f0b, type: 3}
+    - {fileID: 4954882413935681981, guid: 5a1f45a3820813548a0c90c1971e2f0b, type: 3}
+    - {fileID: 8571292302410454014, guid: 5a1f45a3820813548a0c90c1971e2f0b, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 8454635604541309072, guid: 5a1f45a3820813548a0c90c1971e2f0b, type: 3}
