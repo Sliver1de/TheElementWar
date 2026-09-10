@@ -26,14 +26,14 @@ public class CCMovement : MonoBehaviour
 
     private void Update()
     {
-        Movement();
+        // Movement();
         Rotation();
     }
 
-    public void Movement()
+    public void Movement(Vector3 moveDir)
     {
-        float horizontal = Input.GetAxis("Horizontal");
-        float vertical = Input.GetAxis("Vertical");
+        // float horizontal = Input.GetAxis("Horizontal");
+        // float vertical = Input.GetAxis("Vertical");
         
         if (controller.isGrounded)
         {
@@ -44,11 +44,16 @@ public class CCMovement : MonoBehaviour
             }
         }
         
-        Vector3 moveDir = transform.right * horizontal + transform.forward * vertical;
+        // Vector3 moveDir = transform.right * horizontal + transform.forward * vertical;
+        //重力
         verticalVelocity += Physics.gravity.y * Time.deltaTime;
-        moveDir.y = verticalVelocity;
-        
-        controller.Move(moveDir * moveSpeed * Time.deltaTime);
+
+        //水平移动速度
+        Vector3 velocity = moveDir * moveSpeed;
+        //垂直速度
+        velocity.y = verticalVelocity;
+        //真正移动
+        controller.Move(velocity * Time.deltaTime);
     }
 
     public void Rotation()
