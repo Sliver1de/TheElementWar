@@ -48,8 +48,10 @@ public class CCMovement : MonoBehaviour
         //重力
         verticalVelocity += Physics.gravity.y * Time.deltaTime;
 
+        
+        Vector3 worldMoveDirection = transform.TransformDirection(moveDir);
         //水平移动速度
-        Vector3 velocity = moveDir * moveSpeed;
+        Vector3 velocity = worldMoveDirection * moveSpeed;
         //垂直速度
         velocity.y = verticalVelocity;
         //真正移动
