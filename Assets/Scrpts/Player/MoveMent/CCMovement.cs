@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Numerics;
 using UnityEngine;
 using Quaternion = UnityEngine.Quaternion;
+using Vector2 = UnityEngine.Vector2;
 using Vector3 = UnityEngine.Vector3;
 
 [RequireComponent(typeof(CharacterController))]
@@ -27,10 +28,10 @@ public class CCMovement : MonoBehaviour
     private void Update()
     {
         // Movement();
-        Rotation();
+        // Rotation();
     }
 
-    public void Movement(Vector3 moveDir)
+    public void Movement(Vector3 moveDir, bool jumpInput)
     {
         // float horizontal = Input.GetAxis("Horizontal");
         // float vertical = Input.GetAxis("Vertical");
@@ -38,7 +39,7 @@ public class CCMovement : MonoBehaviour
         if (controller.isGrounded)
         {
             verticalVelocity = -2f;
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (jumpInput)
             {
                 verticalVelocity = Mathf.Sqrt(jumpHeight * -2f * Physics.gravity.y);
             }
@@ -58,10 +59,10 @@ public class CCMovement : MonoBehaviour
         controller.Move(velocity * Time.deltaTime);
     }
 
-    public void Rotation()
+    public void Rotation(Vector2 lookInput)
     {
-        float mouseX = Input.GetAxis("Mouse X");
-        float mouseY = Input.GetAxis("Mouse Y");
+        float mouseX = lookInput.x;
+        float mouseY = lookInput.y;
 
         transform.Rotate(0, mouseX * mouseSensitivity, 0);
 

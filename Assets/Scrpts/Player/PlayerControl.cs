@@ -13,6 +13,10 @@ public class PlayerControl : MonoBehaviour
     
     public Vector3 MoveInput { get; private set; }
     
+    public bool JumpInput { get; private set; }
+    
+    public Vector2 LookInput { get; private set; }
+    
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
@@ -27,8 +31,9 @@ public class PlayerControl : MonoBehaviour
         }
         
         ReadInput();
-        
-        _ccMovement.Movement(MoveInput);
+
+        _ccMovement.Movement(MoveInput, JumpInput);
+        _ccMovement.Rotation(LookInput);
     }
 
     private void ReadInput()
@@ -39,5 +44,11 @@ public class PlayerControl : MonoBehaviour
         
         MoveInput = new Vector3(horizontal, 0f, vertical);
         MoveInput = Vector3.ClampMagnitude(MoveInput, 1f);
+        
+        JumpInput = Input.GetKeyDown(KeyCode.Space);
+        
+        float mouseX = Input.GetAxis("Mouse X");
+        float mouseY = Input.GetAxis("Mouse Y");
+        LookInput = new Vector2(mouseX, mouseY);
     }
 }
