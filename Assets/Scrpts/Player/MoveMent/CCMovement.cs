@@ -1,7 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Numerics;
 using UnityEngine;
 using Quaternion = UnityEngine.Quaternion;
 using Vector2 = UnityEngine.Vector2;
@@ -25,16 +21,8 @@ public class CCMovement : MonoBehaviour
         controller = GetComponent<CharacterController>();
     }
 
-    private void Update()
-    {
-        // Movement();
-        // Rotation();
-    }
-
     public void Movement(Vector3 moveDir, bool jumpInput)
     {
-        // float horizontal = Input.GetAxis("Horizontal");
-        // float vertical = Input.GetAxis("Vertical");
         
         if (controller.isGrounded)
         {
