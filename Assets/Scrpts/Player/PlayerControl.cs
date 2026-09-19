@@ -13,7 +13,9 @@ public class PlayerControl : MonoBehaviour
     public bool JumpInput { get; private set; }
     
     public Vector2 LookInput { get; private set; }
-    
+
+    public bool AttackInput { get; private set; }
+
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
@@ -22,10 +24,10 @@ public class PlayerControl : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            weapon.Fire();
-        }
+        // if (Input.GetMouseButtonDown(0))
+        // {
+        //     weapon.Fire();
+        // }
         
         ReadInput();
 
@@ -46,5 +48,7 @@ public class PlayerControl : MonoBehaviour
         float mouseX = Input.GetAxis("Mouse X");
         float mouseY = Input.GetAxis("Mouse Y");
         LookInput = new Vector2(mouseX, mouseY);
+
+        AttackInput = Input.GetMouseButtonDown(0);
     }
 }
