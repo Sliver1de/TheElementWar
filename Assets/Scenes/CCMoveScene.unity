@@ -680,7 +680,7 @@ Transform:
   m_GameObject: {fileID: 765120847}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.5, z: 0}
+  m_LocalPosition: {x: 0, y: 1.5, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6234,7 +6234,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 15
-  jumpHeight: 0.5
+  jumpHeight: 1
   mouseSensitivity: 2
 --- !u!143 &1920033439
 CharacterController:
@@ -6275,6 +6275,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapon: {fileID: 1587120827}
+  _ccMovement: {fileID: 1920033438}
 --- !u!1 &1921069286
 GameObject:
   m_ObjectHideFlags: 0
